@@ -26,13 +26,7 @@ PhotoForm.defaultProps = {
 //Dùng Form của Formik sẽ tự động by event : reset, submit
 
 function PhotoForm(props) {
-  const  initialValues = {
-    title : '',
-    categoryId : null,
-    photo : ''
-  }
-
-  const isAddMode = 1;
+  const { initialValues, isAddMode } = props;
 
   const validationSchema = Yup.object().shape({
     title: Yup.string().required('This field is required.'),
